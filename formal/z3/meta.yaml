@@ -1,5 +1,4 @@
-{% set version = '%s_%04i_%s'|format(GIT_DESCRIBE_TAG|replace('z3-', '') or '0.X.X', GIT_DESCRIBE_NUMBER|int, GIT_DESCRIBE_HASH or 'gUNKNOWN') %} # [nowin]
-{% set version = '4.8.7' %} # [win]
+{% set version = '4.8.7' %}
 
 package:
   name: z3
@@ -8,10 +7,11 @@ package:
 source:
   folder: z3
   git_url: https://github.com/Z3Prover/z3.git                                         # [not win]
+  git_rev: 4.8.7                                                                      # [not win]
   url: https://github.com/Z3Prover/z3/releases/download/z3-4.8.7/z3-4.8.7-x64-win.zip # [win]
   md5: c89615c118cc17d0180000d02d49d0d8                                               # [win]
   sha1: 802a8dcb87cb0de1736c934fc766eead5cce7563                                      # [win]
-  sha256: 780874697a7aef2028d7b8bc31e78be760622e0c3823ed1731a6ee7072fa60cd            # [win]
+  sha256: 780874697a7aef2028d7b8bc31e78 be760622e0c3823ed1731a6ee7072fa60cd           # [win]
 
 build:
   detect_binary_files_with_prefix: True
