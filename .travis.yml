@@ -128,7 +128,7 @@ jobs:
  # EDA Tools - Formal
   - stage: "EDA Tools - Formal"
     env:
-    - PACKAGE=formal/symbiyosys
+    - PACKAGE=formal/z3
 
 before_install:
  - source $TRAVIS_BUILD_DIR/.travis/common.sh
