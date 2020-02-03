@@ -1,0 +1,30 @@
+{% set version = '4.8.7' %}
+
+package:
+  name: boolector
+  version: {{ version }}
+  
+source:
+   git_url: https://github.com/Boolector/boolector.git
+   git_rev: master
+   patches:
+
+build:
+  detect_binary_files_with_prefix: True
+  number: {{ environ.get('DATE_NUM') }}
+  string: {{ environ.get('DATE_STR') }}
+  script_env:
+    - CI
+    - TRAVIS
+
+requirements:
+  build:
+    - python 3.7            
+    - {{ compiler('c') }}  
+    - {{ compiler('cxx') }}
+    - cmake                
+
+about:
+  home: https://boolector.github.io/
+  license: MIT
+  summary: 'A Satisfiability Modulo Theories (SMT) solver for the theories of fixed-size bit-vectors, arrays and uninterpreted functions.'

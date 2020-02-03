@@ -16,6 +16,10 @@ jobs:
     os: linux
     env:
     - PACKAGE=formal/z3
+  - stage: "EDA Tools - Formal"
+    os: linux
+    env:
+    - PACKAGE=formal/boolector
   # Windows
   - stage: "EDA Tools - Formal"
     os: windows
@@ -27,6 +31,11 @@ jobs:
     osx_image: xcode8.3
     env:
     - PACKAGE=formal/z3
+  - stage: "EDA Tools - Formal"
+    os: osx
+    osx_image: xcode8.3
+    env:
+    - PACKAGE=formal/boolector
 
 before_install:
  - source $TRAVIS_BUILD_DIR/.travis/common.sh
