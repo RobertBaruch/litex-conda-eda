@@ -16,5 +16,7 @@ if %ARCH% EQU 32 (
 
 cd build
 nmake
-dir
-dir python
+copy libz3.dll %LIBRARY_BIN%
+copy libz3.lib %LIBRARY_BIN%
+copy libz3.exp %LIBRARY_BIN%
+copy z3.exe %LIBRARY_BIN%
