@@ -1,9 +1,18 @@
-ECHO on
+if %ARCH% EQU 32 (
+  set VL_ARCH="win32"
+  call "%VCINSTALLDIR%\vcvarsall.bat" x86
+) else (
+  set VL_ARCH="win64"
+  call "%VCINSTALLDIR%\vcvarsall.bat" amd64
+)
 
-mkdir %PREFIX%\bin
-copy z3\include\* %LIBRARY_INC%
-if errorlevel 1 exit 1
-copy z3\bin\* %LIBRARY_BIN%
-if errorlevel 1 exit 1
+cd z3
 
-z3 --version
+if %ARCH% EQU 32 (
+    python scripts/mk_make.py
+) else (
+    python scripts/mk_make.py -x
+)
+
+cd build
+nmake
