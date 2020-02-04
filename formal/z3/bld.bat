@@ -16,3 +16,5 @@ if %ARCH% EQU 32 (
 
 cd build
 nmake
+dir
+dir python
