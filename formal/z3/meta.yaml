@@ -23,6 +23,9 @@ requirements:
     - {{ compiler('c') }}   # [not win]
     - {{ compiler('cxx') }} # [not win]
     - make                  # [not win]
+    - vs2015_runtime        # [win]
+  run:
+    - vs2015_runtime        # [win]
 
 about:
   home: https://github.com/Z3Prover/z3/wiki
