@@ -24,7 +24,7 @@ requirements:
     - {{ compiler('cxx') }} # [not win]
     - make                  # [not win]
     - vs2015_runtime        # [win]
-  run:
+  run:                      # [win]
     - vs2015_runtime        # [win]
 
 about:
